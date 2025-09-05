@@ -1,4 +1,5 @@
 @extends('Layouts.MasterLayout')
+@php $minimal = true; @endphp
 
 @section('title', 'Register - CuddluDuddly')
 
@@ -6,7 +7,8 @@
     <div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
         <div class="w-full max-w-lg bg-white rounded-lg shadow-md p-6">
             <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">
-                Registration Form
+                {{-- Registration Form --}}
+                {{ $role === 'vendor' ? 'Seller Registration' : 'Customer Registration' }}
             </h2>
 
             {{-- Server-side success message --}}
@@ -101,6 +103,10 @@
             <p class="text-sm text-gray-600 mt-4 text-center">
                 Already have an account?
                 <a href="{{ route('login') }}" class="text-blue-500 hover:underline">Login</a>
+                <span class="mx-1">/</span>
+                <a href="{{ url('/') }}" class="text-blue-500 hover:underline">Home</a>
+                <span class="mx-1">/</span>
+                <a href="{{ url('/seller-register') }}" class="text-blue-500 hover:underline">Seller Registration</a>
             </p>
         </div>
     </div>

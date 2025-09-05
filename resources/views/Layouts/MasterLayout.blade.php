@@ -14,7 +14,10 @@
 <body class="bg-gray-50 text-gray-800">
 
     {{-- Header --}}
-    @include('Layouts.Header')
+    {{-- @include('Layouts.Header') --}}
+     @if(!isset($minimal) || !$minimal)
+        @include('Layouts.Header')
+    @endif
 
     {{-- Page Content --}}
     <main class="min-h-screen">
@@ -22,7 +25,10 @@
     </main>
 
     {{-- Footer --}}
-    @include('Layouts.Footer')
+    {{-- @include('Layouts.Footer') --}}
+     @if(!isset($minimal) || !$minimal)
+        @include('Layouts.Footer')
+    @endif
 
 </body>
 </html>
